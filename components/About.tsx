@@ -53,10 +53,10 @@ export const About: React.FC = () => {
 
                     <div className="grid grid-cols-2 gap-4 md:gap-6">
                         {[
-                            { label: "Experience", value: "5+ Yrs", color: "bg-[#FFD60A]" },
-                            { label: "Projects", value: "50+ Done", color: "bg-[#5AC8FA]" },
-                            { label: "Awards", value: "12 Wins", color: "bg-[#FF2D55]" },
-                            { label: "Coffee", value: "∞ Cups", color: "bg-[#5856D6]", text: "text-white" }
+                            { label: "Experience", value: "1+ Year", color: "bg-[#FFD60A]" },
+                            { label: "Boring UIs", value: "Zero", color: "bg-[#5AC8FA]" },
+                            { label: "Pixel Perfect", value: "100%", color: "bg-[#FF2D55]" },
+                            { label: "Builder Mode", value: "24/7", color: "bg-[#5856D6]", text: "text-white" }
                         ].map((stat, i) => (
                             <motion.div
                                 key={i}
