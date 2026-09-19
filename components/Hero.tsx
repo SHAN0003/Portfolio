@@ -53,22 +53,22 @@ export const Hero: React.FC = () => {
           transition={{ type: "spring", bounce: 0.5, delay: 0.5 }}
           className="mb-8 bg-white border-2 border-black px-6 py-2 rounded-full neo-shadow"
         >
-          <span className="font-bold text-black uppercase tracking-widest text-sm">✨ Open for Magic ✨</span>
+          <span className="font-bold text-black uppercase tracking-widest text-sm">✨ FULL STACK DEVELOPER ✨</span>
         </motion.div>
 
-        <Title text="CREATIVE" />
+        <Title text="SHAN" />
         <div className="-mt-1 md:-mt-4 relative z-10">
           {/* Outlined text in cartoon style is white fill with thick black stroke */}
-          <Title text="DEVELOPER" color="text-outline-white text-white" />
+          <Title text="PATEL" color="text-outline-white text-white" />
         </div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="mt-6 md:mt-8 text-black/80 max-w-sm md:max-w-lg text-center text-lg md:text-xl font-medium leading-relaxed bg-white/80 backdrop-blur-sm p-4 rounded-xl border-2 border-black neo-shadow mx-4"
+          className="mt-6 md:mt-8 text-black/80 max-w-sm md:max-w-xl text-center text-lg md:text-xl font-medium leading-relaxed bg-white/80 backdrop-blur-sm p-4 rounded-xl border-2 border-black neo-shadow mx-4"
         >
-          I make websites that go <b>boing</b>! Crafting interactive digital playgrounds with a pinch of chaos.
+          Full-stack web developer specializing in <b>Next.js</b>, <b>React</b>, and <b>Node.js</b>. Building scalable, high-performance web applications and interactive 3D digital experiences.
         </motion.p>
 
         <motion.div
@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
           transition={{ delay: 2, type: 'spring' }}
         >
           <MagneticButton onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}>
-            See My Stuff
+            See My Work
           </MagneticButton>
         </motion.div>
       </div>

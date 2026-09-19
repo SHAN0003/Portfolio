@@ -7,31 +7,39 @@ import { playBoing } from '../utils/audio';
 const projects: Project[] = [
   {
     id: 1,
-    title: "NEBULA",
-    category: "Game",
-    image: "https://picsum.photos/800/600?random=1",
-    description: "A fun galaxy visualization made with math and magic."
+    title: "NextGen",
+    category: "Next.js & MongoDB",
+    tech: ["Next.js", "MongoDB", "NextAuth", "Protected APIs"],
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&auto=format&fit=crop&q=80",
+    description: "Production-ready e-commerce web app with secure NextAuth authentication, role-based access control, CRUD operations with protected API routes, and persistent Add to Cart system.",
+    githubUrl: "https://github.com/SHAN0003"
   },
   {
     id: 2,
-    title: "POP SHOP",
-    category: "Store",
-    image: "https://picsum.photos/800/600?random=2",
-    description: "E-commerce that feels like a candy store."
+    title: "Shopezy",
+    category: "React.js Platform",
+    tech: ["React.js", "JavaScript", "Context API", "SCSS"],
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=80",
+    description: "Responsive e-commerce platform with product browsing, cart, and order management. Mobile-friendly layouts, fast load times, and RESTful APIs with React Hooks & Context API.",
+    githubUrl: "https://github.com/SHAN0003"
   },
   {
     id: 3,
-    title: "DOODLE",
-    category: "Art",
-    image: "https://picsum.photos/800/600?random=3",
-    description: "Draw on the web with virtual crayons."
+    title: "3D Physics Lab",
+    category: "fotonVR / Three.js",
+    tech: ["Three.js", "JavaScript", "WebGL", "Physics Simulation"],
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+    description: "Developed over 10+ 3D interactive learning activities using Three.js, visualizing complex physics concepts like Projectile Motion, Hall Effect, and Photoelectric Effect.",
+    githubUrl: "https://github.com/SHAN0003"
   },
   {
     id: 4,
-    title: "ZAP",
-    category: "Dashboard",
-    image: "https://picsum.photos/800/600?random=4",
-    description: "Data analytics but make it fun."
+    title: "Animated Portfolio",
+    category: "React & Framer Motion",
+    tech: ["React.js", "Framer Motion", "Tailwind CSS", "Neo-Brutalism"],
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+    description: "Animated portfolio showcasing smooth UI transitions, dynamic micro-interactions, responsive design, and motion design using Framer Motion.",
+    githubUrl: "https://github.com/SHAN0003"
   }
 ];
 
@@ -44,7 +52,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       whileHover={{ y: -10, rotate: index % 2 === 0 ? 2 : -2 }}
       onMouseEnter={() => playBoing()}
       transition={{ type: "spring", stiffness: 200 }}
-      className="relative group w-full"
+      className="relative group w-full cursor-pointer"
+      onClick={() => project.githubUrl && window.open(project.githubUrl, '_blank')}
       data-cursor-hover
     >
       <div className="w-full aspect-[4/3] bg-white border-[3px] border-black rounded-2xl overflow-hidden neo-shadow-lg relative z-10 group-hover:shadow-[12px_12px_0px_0px_#000] transition-shadow duration-200">
@@ -55,18 +64,29 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         />
 
         {/* Overlay Label */}
-        <div className="absolute top-4 left-4 bg-yellow-400 border-2 border-black px-3 py-1 rounded-full text-xs font-bold uppercase">
+        <div className="absolute top-4 left-4 bg-yellow-400 border-2 border-black px-3 py-1 rounded-full text-xs font-bold uppercase neo-shadow">
           {project.category}
         </div>
       </div>
 
       <div className="mt-6 pl-2">
         <h3 className="text-3xl md:text-4xl font-black mb-2 text-black group-hover:text-pink-500 transition-colors">{project.title}</h3>
-        <p className="text-gray-600 font-medium text-lg leading-relaxed">{project.description}</p>
+        
+        {project.tech && (
+          <div className="flex flex-wrap gap-2 mb-3">
+            {project.tech.map((t, idx) => (
+              <span key={idx} className="text-xs font-bold bg-yellow-100 border border-black px-2 py-0.5 rounded-md neo-shadow">
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
+        
+        <p className="text-gray-700 font-medium text-base md:text-lg leading-relaxed">{project.description}</p>
       </div>
 
       <div
-        className="absolute top-[-20px] right-[-20px] p-4 rounded-full bg-blue-400 border-[3px] border-black z-20 scale-0 group-hover:scale-100 transition-transform duration-300"
+        className="absolute top-[-20px] right-[-20px] p-4 rounded-full bg-blue-400 border-[3px] border-black z-20 scale-0 group-hover:scale-100 transition-transform duration-300 neo-shadow"
       >
         <ExternalLink className="text-black w-8 h-8" strokeWidth={3} />
       </div>

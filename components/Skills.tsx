@@ -2,8 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  "React", "Three.js", "TypeScript", "Next.js",
-  "WebGL", "Design", "Animation", "Physics"
+  "Next.js", "React.js", "Node.js", "MongoDB",
+  "Three.js", "Express.js", "JavaScript", "Tailwind CSS",
+  "Git & GitHub", "Postman", "Framer Motion", "REST APIs"
 ];
 
 interface MarqueeProps {

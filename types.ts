@@ -4,6 +4,8 @@ export interface Project {
   category: string;
   image: string;
   description: string;
+  tech?: string[];
+  githubUrl?: string;
 }
 
 export interface NavItem {

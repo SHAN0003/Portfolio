@@ -44,10 +44,10 @@ export const Navbar: React.FC = () => {
           <motion.span 
               whileHover={{ scale: 1.1, rotate: -5 }}
               onMouseEnter={() => playPop(1.5)}
-              className="text-xl md:text-2xl font-black tracking-tight cursor-pointer text-black select-none drop-shadow-sm"
+              className="text-lg md:text-2xl font-black tracking-tight cursor-pointer text-black select-none drop-shadow-sm whitespace-nowrap"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth'})}
           >
-              KINETIC
+              SHAN PATEL
           </motion.span>
           
           {/* Divider */}

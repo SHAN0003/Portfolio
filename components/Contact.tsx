@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MagneticButton } from './ui/MagneticButton';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Github, Linkedin, Phone } from 'lucide-react';
 import { playBoing } from '../utils/audio';
 
 export const Contact: React.FC = () => {
@@ -18,18 +18,22 @@ export const Contact: React.FC = () => {
                     <h2 className="text-5xl md:text-8xl font-black mb-6 md:mb-8 leading-none text-black">
                         SAY HELLO!
                     </h2>
-                    <p className="text-lg md:text-2xl text-black font-bold mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
-                        Got a crazy idea? Want to build something fun? <br className="hidden md:block" />
-                        Let's make the internet weird again.
+                    <p className="text-lg md:text-2xl text-black font-bold mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+                        Looking for a full-stack engineer or have an exciting project? <br className="hidden md:block" />
+                        Let's build something remarkable together.
                     </p>
 
                     <MagneticButton
                         variant='secondary'
                         className="bg-white hover:bg-gray-100 text-black border-[3px] border-black text-lg md:text-xl py-3 md:py-4"
-                        onClick={() => window.location.href = 'mailto:hello@example.com'}
+                        onClick={() => window.location.href = 'mailto:shaanpatel5750@gmail.com'}
                     >
                         Shoot me an Email
                     </MagneticButton>
+
+                    <p className="mt-6 font-black text-sm md:text-base text-black bg-white/60 inline-block px-4 py-1.5 rounded-full border-2 border-black neo-shadow">
+                        📍 Patan, Gujarat &nbsp;•&nbsp; ✉️ shaanpatel5750@gmail.com &nbsp;•&nbsp; 📞 +91 9265566265
+                    </p>
 
                     {/* Decorative Corner Elements */}
                     <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-8 h-8 md:w-12 md:h-12 bg-[#5AC8FA] border-[3px] border-black rounded-full" />
@@ -38,16 +42,19 @@ export const Contact: React.FC = () => {
 
                 <div className="mt-16 md:mt-24 flex justify-center flex-wrap gap-4 md:gap-6">
                     {[
-                        { icon: Github, color: 'bg-[#1c1c1e]', text: 'text-white' },
-                        { icon: Linkedin, color: 'bg-[#0077b5]', text: 'text-white' },
-                        { icon: Twitter, color: 'bg-[#1DA1F2]', text: 'text-white' },
-                        { icon: Mail, color: 'bg-[#FF2D55]', text: 'text-white' }
+                        { icon: Github, href: 'https://github.com/SHAN0003', label: 'GitHub', color: 'bg-[#1c1c1e]', text: 'text-white' },
+                        { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'bg-[#0077b5]', text: 'text-white' },
+                        { icon: Phone, href: 'tel:9265566265', label: 'Phone', color: 'bg-[#10b981]', text: 'text-white' },
+                        { icon: Mail, href: 'mailto:shaanpatel5750@gmail.com', label: 'Email', color: 'bg-[#FF2D55]', text: 'text-white' }
                     ].map((item, i) => (
                         <motion.a
                             key={i}
-                            href="#"
+                            href={item.href}
+                            target={item.href.startsWith('http') ? '_blank' : undefined}
+                            rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                             whileHover={{ scale: 1.2, rotate: 10, y: -5 }}
                             onMouseEnter={() => playBoing()}
+                            aria-label={item.label}
                             className={`p-3 md:p-4 rounded-full border-[3px] border-black ${item.color} ${item.text} transition-transform neo-shadow-hover`}
                             data-cursor-hover
                         >
@@ -57,9 +64,9 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <footer className="mt-20 md:mt-32 text-black font-bold text-xs md:text-sm flex flex-col md:flex-row justify-between items-center border-t-[3px] border-black pt-8 gap-4">
-                    <p className="uppercase tracking-wider">&copy; {new Date().getFullYear()} KINETIC.</p>
+                    <p className="uppercase tracking-wider">&copy; {new Date().getFullYear()} SHAN PATEL. ALL RIGHTS RESERVED.</p>
                     <p className="bg-black text-white px-3 py-1 rounded-full">
-                        NO BORING WEBSITES ALLOWED
+                        FULL STACK DEVELOPER
                     </p>
                 </footer>
             </div>
