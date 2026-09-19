@@ -20,18 +20,43 @@ export const About: React.FC = () => {
                     viewport={{ once: true }}
                     className="w-full md:w-1/3 md:sticky md:top-32 flex flex-col items-center md:items-start text-center md:text-left"
                 >
-                    <div className="bg-yellow-400 border-[3px] border-black p-2 inline-block rounded-lg neo-shadow mb-4 transform -rotate-2">
-                        <h2 className="text-black font-black text-sm tracking-widest uppercase">02 — Who am I?</h2>
+                    <div className="bg-yellow-400 border-[3px] border-black px-3 py-1.5 inline-flex items-center gap-2 rounded-xl neo-shadow mb-4 transform -rotate-2 hover:rotate-0 transition-transform cursor-default">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#FF2D55] animate-ping inline-block" />
+                        <h2 className="text-black font-black text-xs md:text-sm tracking-widest uppercase">02 // The Mission</h2>
                     </div>
-                    <h3 className="text-5xl md:text-6xl font-black leading-none mb-6">
-                        Not your <br className="hidden md:block" /> average <br className="hidden md:block" />
-                        <span className="text-[#FF2D55] drop-shadow-[2px_2px_0px_#000]">Human.</span>
+                    <h3 className="text-5xl md:text-6xl font-black leading-[1.02] mb-6">
+                        Making <br className="hidden md:block" /> the web <br className="hidden md:block" />
+                        <span className="text-[#FF2D55] drop-shadow-[3px_3px_0px_#000]">Fun again.</span>
                     </h3>
-                    <img
-                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4"
-                        alt="Avatar"
-                        className="w-40 h-40 md:w-48 md:h-48 rounded-full border-[3px] border-black bg-blue-200 neo-shadow-lg"
-                    />
+                    <div className="relative group">
+                        <motion.div
+                            whileHover={{ scale: 1.05, rotate: 2 }}
+                            whileTap={{ scale: 0.95 }}
+                            onMouseEnter={() => playBoing()}
+                            className="w-44 h-44 md:w-52 md:h-52 rounded-3xl border-[3.5px] border-black bg-yellow-300 neo-shadow-lg overflow-hidden relative cursor-pointer"
+                        >
+                            <img
+                                src="/avatar.jpeg"
+                                alt="Avatar"
+                                className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"
+                            />
+                        </motion.div>
+
+                        {/* Interactive floating pill sticker */}
+                        <motion.div
+                            animate={{ y: [0, -4, 0] }}
+                            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+                            className="absolute -bottom-3 -right-2 bg-[#5AC8FA] border-[2.5px] border-black px-3 py-1 rounded-full neo-shadow text-black font-black text-xs uppercase transform rotate-6 pointer-events-none"
+                        >
+                            IN BUILD MODE
+                        </motion.div>
+
+                        {/* Status chip */}
+                        <div className="absolute -top-2 -left-2 bg-white border-[2.5px] border-black px-2.5 py-0.5 rounded-full neo-shadow flex items-center gap-1.5 pointer-events-none">
+                            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                            <span className="text-[10px] font-black uppercase tracking-wider text-black">Hey, It's Me!</span>
+                        </div>
+                    </div>
                 </motion.div>
 
                 <div className="w-full md:w-2/3">
