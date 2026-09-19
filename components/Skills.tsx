@@ -2,8 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  "React", "Three.js", "TypeScript", "Next.js",
-  "WebGL", "Design", "Animation", "Physics"
+  "Next.js", "React.js", "Node.js", "MongoDB",
+  "Three.js", "Express.js", "JavaScript", "Tailwind CSS",
+  "Git & GitHub", "Postman", "Framer Motion", "REST APIs"
 ];
 
 interface MarqueeProps {
@@ -56,7 +57,7 @@ export const Skills: React.FC = () => {
           {skills.slice().reverse().map((skill, i) => (
             <div key={i} className="flex items-center">
               <span
-                className="text-6xl md:text-9xl font-black text-black mx-4 md:mx-8 uppercase hover:text-white transition-colors duration-200"
+                className="text-6xl md:text-9xl font-black text-black mx-4 md:mx-8 uppercase hover:text-[#FFD60A] transition-colors duration-200"
                 style={{ textShadow: '4px 4px 0px rgba(0,0,0,0.1)' }}
               >
                 {skill}

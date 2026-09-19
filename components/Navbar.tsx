@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
                   animate={{ opacity: 1, y: -40, scale: 1, rotate: -2 }}
                   exit={{ opacity: 0, y: 2, scale: 0.7, transition: { duration: 0.12 } }}
                   transition={{ type: "spring", stiffness: 450, damping: 18 }}
-                  className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-50 whitespace-nowrap bg-black text-white font-extrabold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full border-2 border-black neo-shadow flex items-center gap-1.5 shadow-[2px_2px_0px_#FFD60A]"
+                  className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-50 whitespace-nowrap bg-black text-white font-extrabold text-[10px] tracking-wider uppercase px-2.5 py-1 mt-1 rounded-full border-2 border-black neo-shadow flex items-center gap-1.5 shadow-[2px_2px_0px_#FFD60A]"
                 >
                   <span>TOP</span>
                   <span className="text-[#FFD60A]">✦</span>
@@ -89,9 +89,9 @@ export const Navbar: React.FC = () => {
                 animate={
                   isBooping
                     ? {
-                        scale: [1, 0.9, 1.1, 1],
-                        rotate: [0, -6, 6, 0],
-                      }
+                      scale: [1, 0.9, 1.1, 1],
+                      rotate: [0, -6, 6, 0],
+                    }
                     : isLogoHovered
                       ? { rotate: [-3, 3, -3], transition: { repeat: Infinity, duration: 0.8, ease: "easeInOut" } }
                       : { rotate: 0 }
