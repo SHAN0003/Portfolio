@@ -7,32 +7,13 @@ import { playBoing } from '../utils/audio';
 const projects: Project[] = [
   {
     id: 1,
-    title: "NEBULA",
-    category: "Game",
-    image: "https://picsum.photos/800/600?random=1",
-    description: "A fun galaxy visualization made with math and magic."
+    title: "DEV-CIRCLE",
+    category: "Social Media",
+    image: "/devcircle_social_thumbnail_1791118580291.jpg",
+    description: "A social media platform for developers.",
+    url: "https://devcircle-three.vercel.app/"
   },
-  {
-    id: 2,
-    title: "POP SHOP",
-    category: "Store",
-    image: "https://picsum.photos/800/600?random=2",
-    description: "E-commerce that feels like a candy store."
-  },
-  {
-    id: 3,
-    title: "DOODLE",
-    category: "Art",
-    image: "https://picsum.photos/800/600?random=3",
-    description: "Draw on the web with virtual crayons."
-  },
-  {
-    id: 4,
-    title: "ZAP",
-    category: "Dashboard",
-    image: "https://picsum.photos/800/600?random=4",
-    description: "Data analytics but make it fun."
-  }
+  // { 
 ];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
@@ -65,7 +46,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         <p className="text-gray-600 font-medium text-lg leading-relaxed">{project.description}</p>
       </div>
 
-      <div
+      <div onClick={() => project.url ? window.open(project.url, "_blank") : null}
         className="absolute top-[-20px] right-[-20px] p-4 rounded-full bg-blue-400 border-[3px] border-black z-20 scale-0 group-hover:scale-100 transition-transform duration-300"
       >
         <ExternalLink className="text-black w-8 h-8" strokeWidth={3} />

@@ -4,6 +4,7 @@ export interface Project {
   category: string;
   image: string;
   description: string;
+  url: string;
 }
 
 export interface NavItem {
